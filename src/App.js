@@ -1,21 +1,11 @@
-import React, {useEffect, useState } from "react";
-const Time = () => {
-        const [time, setTime] = useState(new Date())
+import React from "react";
+import Timer from "./components/Time";
 
-        useEffect(() => {
-            let interValid = setInterval( ()=> {
-                setTime(new Date());
-            }, 1000);
-            return () => clearInterval(interValid)
-            },[] )
-
-    return(
-        <div className= "clock">
-            <p> Time:{time.toLocaleTimeString()}</p>
+const App = () => {
+    return (
+        <div>
+            <Timer/>
         </div>
     )
 }
-
-export default Time;
-
-
+export default App;
